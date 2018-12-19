@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>uesr-client</artifactId>
+    <artifactId>user-client</artifactId>
     <packaging>war</packaging>
 
     <name>user-client</name>
