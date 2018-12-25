@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
-    @Reference(version = "1.0")
+    /**
+     * 当有多个实现时
+     * 不指定group  userService无法注入。。为null
+     * group为*  输出lender
+     */
+    @Reference(version = "1.0", group = "user")
     UserService userService;
 
     @RequestMapping(value = "/index")

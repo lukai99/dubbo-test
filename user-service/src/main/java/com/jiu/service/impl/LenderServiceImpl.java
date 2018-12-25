@@ -5,11 +5,11 @@ import com.jiu.service.UserService;
 import org.springframework.stereotype.Component;
 
 @Component
-@Service(version = "1.0", timeout = 3000, group = "user")
-public class UserServiceImpl implements UserService {
+@Service(version = "1.0", timeout = 3000, group = "user1")
+public class LenderServiceImpl implements UserService{
 
     @Override
     public String say() {
-        return "user";
+        return "lender";
     }
 }
