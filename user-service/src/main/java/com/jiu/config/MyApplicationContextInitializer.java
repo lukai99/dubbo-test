@@ -20,8 +20,7 @@ public class MyApplicationContextInitializer implements WebApplicationInitialize
         //加载配置文件
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(AppConfig.class, DubboConfig.class);
-
-        servletContext.addListener(new ContextLoaderListener(rootContext));
+        rootContext.refresh();
 
     }
 }
