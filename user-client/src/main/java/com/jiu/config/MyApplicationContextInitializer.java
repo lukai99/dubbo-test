@@ -19,17 +19,17 @@ public class MyApplicationContextInitializer implements WebApplicationInitialize
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
 
+        // Load Spring web application configuration
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         //加载配置文件
         rootContext.register(MvcConfig.class, DubboConfig.class);
 
+        // Create and register the DispatcherServlet
         //配置dispatcherServlet
         ServletRegistration.Dynamic servlet =
                 servletContext.addServlet("dispatcher", new DispatcherServlet(rootContext));
-
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/");
 
-        servletContext.addListener(new ContextLoaderListener(rootContext));
     }
 }
